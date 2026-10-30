@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_santorini" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6" />
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad_santorini)" />
+  <rect width="100%" height="100%" fill="url(#glow)" />
+  <circle cx="400" cy="260" r="140" stroke="#B89B66" stroke-width="1.5" fill="none" opacity="0.4" />
+  <circle cx="400" cy="260" r="110" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="4,6" fill="none" opacity="0.3" />
+  <path d="M280 400 L400 240 L520 400 Z" fill="#000000" opacity="0.2" />
+  <path d="M340 400 L460 270 L580 400 Z" fill="#000000" opacity="0.15" />
+  <text x="400" y="240" font-family="'Playfair Display', serif, Georgia" font-size="42" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">SANTORINI</text>
+  <text x="400" y="290" font-family="'Plus Jakarta Sans', sans-serif, Arial" font-size="14" font-weight="600" fill="#B89B66" text-anchor="middle" letter-spacing="6">GREECE</text>
+  <text x="400" y="480" font-family="'Plus Jakarta Sans', sans-serif, Arial" font-size="12" fill="#FFFFFF" opacity="0.6" text-anchor="middle" letter-spacing="3">POLARIS ARCHIVE • EDITORIAL DISCOVERY</text>
+</svg>
