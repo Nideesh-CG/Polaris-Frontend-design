@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POLARIS — Find Your Next Somewhere | Luxury Travel Discovery</title>
+  <meta name="description" content="Discover extraordinary places, hidden escapes, and journeys worth remembering. A luxury editorial travel discovery and bespoke itinerary planning platform." />
+  <meta name="theme-color" content="#14212A" />
+
+  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Official Bootstrap 5 CDN & Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Polaris Editorial Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP NAVIGATION BAR
+       ======================================================================== -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg polaris-navbar" aria-label="Main Navigation">
+      <div class="container-xl">
+        <!-- Brand Logo -->
+        <a class="navbar-brand polaris-brand py-0 me-4" href="#home" data-nav-target="home" aria-label="POLARIS Home">
+          <span>POLARIS</span>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button 
+          class="navbar-toggler border-0 p-1" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#polarisNavbarNav" 
+          aria-controls="polarisNavbarNav" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation menu"
+        >
+          <i class="bi bi-list fs-2 text-dark"></i>
+        </button>
+
+        <!-- Navbar Links & Actions -->
+        <div class="collapse navbar-collapse" id="polarisNavbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home" data-nav-target="home" id="navHome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#explore" data-nav-target="explore" id="navExplore">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#destinations" data-nav-target="destinations" id="navDestinations">Destinations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#collections" data-nav-target="collections" id="navCollections">Collections</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#planner" data-nav-target="planner" id="navPlanner">Plan a Trip</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#journeys" data-nav-target="journeys" id="navJourneys">My Journeys</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#insights" data-nav-target="insights" id="navInsights">Travel Insights</a>
+            </li>
+          </ul>
+
+          <!-- Action Controls: Global Search & Favourites Badge -->
+          <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+            <!-- Global Search Trigger -->
+            <button 
+              type="button" 
+              class="navbar-action-btn" 
+              data-bs-toggle="modal" 
+              data-bs-target="#globalSearchModal" 
+              aria-label="Search destinations (Ctrl+K)"
+              title="Search destinations (Ctrl+K)"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Favourites Page Nav Link -->
+            <a 
+              href="#favourites" 
+              class="navbar-action-btn text-decoration-none" 
+              data-nav-target="favourites" 
+              aria-label="View saved favourites"
+              title="Saved Favourites"
+            >
+              <i class="bi bi-heart"></i>
+              <span class="badge-counter favourites-count-badge" style="display: none;">0</span>
+            </a>
+
+            <!-- Plan Now CTA -->
+            <button 
+              type="button" 
+              class="btn btn-polaris-accent btn-sm ms-2 d-none d-sm-inline-flex align-items-center"
+              onclick="PolarisApp.navigateTo('planner')"
+            >
+              <i class="bi bi-compass me-1"></i>Start Planning
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================================
+       MAIN APPLICATION CONTAINER (SPA SECTIONS)
+       ======================================================================== -->
+  <main id="polarisMainContent">
+
+    <!-- ======================================================================
+         SECTION 1: HOME PAGE
+         ====================================================================== -->
+    <section id="home" class="polaris-section" aria-labelledby="heroMainHeading">
+      <!-- Immersive Editorial Hero -->
+      <div class="hero-editorial-section">
+        <div class="container-xl">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-12 col-lg-7 mb-5 mb-lg-0">
+              <span class="badge bg-secondary text-dark text-uppercase tracking-widest fs-xs mb-3 px-3 py-2 border">
+                Luxury Editorial Concierge
+              </span>
+              <h1 id="heroMainHeading" class="hero-headline mb-4">
+                THE WORLD IS WAITING.
+              </h1>
+              <p class="hero-subhead mb-5 max-w-xl">
+                Discover extraordinary places, hidden escapes, and journeys worth remembering. Curate bespoke day-by-day itineraries tailored to your unique rhythm.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <button type="button" class="btn btn-polaris-accent" onclick="PolarisApp.navigateTo('destinations')">
+                  <i class="bi bi-compass me-2"></i>EXPLORE DESTINATIONS
+                </button>
+                <button type="button" class="btn btn-polaris-outline-light" onclick="PolarisApp.navigateTo('planner')">
+                  <i class="bi bi-calendar-plus me-2"></i>PLAN YOUR JOURNEY
+                </button>
+              </div>
+            </div>
+
+            <!-- Compact Hero Search Card -->
+            <div class="col-12 col-lg-5 col-xl-4">
+              <div class="hero-search-card p-4 p-md-5">
+                <span class="polaris-country-subheading d-block mb-1 text-accent">Quick Discovery</span>
+                <h2 class="font-serif fs-4 mb-3 text-dark">Find Your Next Somewhere</h2>
+
+                <form id="heroSearchForm" class="d-flex flex-column gap-3">
+                  <div>
+                    <label for="heroSearchDestinationInput" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Destination or Region
+                    </label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-white border-end-0 text-muted">
+                        <i class="bi bi-geo-alt"></i>
+                      </span>
+                      <input 
+                        type="text" 
+                        id="heroSearchDestinationInput" 
+                        class="form-control border-start-0 ps-0 fs-sm" 
+                        placeholder="e.g. Kyoto, Swiss Alps, Bali..." 
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="heroSearchStyleSelect" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Travel Style
+                    </label>
+                    <select id="heroSearchStyleSelect" class="form-select fs-sm">
+                      <option value="all" selected>All Travel Styles</option>
+                      <option value="Adventure">Adventure</option>
+                      <option value="Luxury">Luxury</option>
+                      <option value="Culture">Culture</option>
+                      <option value="Nature">Nature</option>
+                      <option value="Relaxation">Relaxation</option>
+                      <option value="Food and Cuisine">Food &amp; Cuisine</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="heroSearchBudgetSelect" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Estimated Daily Budget
+                    </label>
+                    <select id="heroSearchBudgetSelect" class="form-select fs-sm">
+                      <option value="all" selected>Any Daily Budget</option>
+                      <option value="under-100">Under $100 / day</option>
+                      <option value="100-200">$100 – $200 / day</option>
+                      <option value="200-300">$200 – $300 / day</option>
+                      <option value="over-300">$300+ / day (Luxury)</option>
+                    </select>
+                  </div>
+
+                  <button type="submit" class="btn btn-polaris-primary mt-2">
+                    <i class="bi bi-search me-2"></i>Search Escapes
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial Philosophy Intro -->
+      <div class="py-6 border-bottom bg-surface">
+        <div class="container-xl">
+          <div class="row align-items-center g-5">
+            <div class="col-12 col-lg-6">
+              <span class="polaris-country-subheading text-accent">The Philosophy of Polaris</span>
+              <h2 class="font-serif fs-2 mb-3 mt-1 text-dark">
+                Travel is an art form. We curate the canvas.
+              </h2>
+              <p class="text-muted mb-3">
+                In an era of rushed tourism and overcrowded checklists, POLARIS celebrates mindful exploration. We blend high-altitude sanctuaries, secluded volcanic coasts, and millennium-old cultural landscapes into thoughtfully paced itineraries.
+              </p>
+              <p class="text-muted mb-4">
+                Whether you are seeking silent dawn walks through Kyoto’s bamboo groves, private catamaran charters in the Aegean caldera, or starlit glamping by Ladakh’s high-altitude lakes, each recommendation is grounded in authentic serenity.
+              </p>
+              <div class="d-flex gap-4 border-top pt-4">
+                <div>
+                  <div class="fs-3 font-serif fw-bold text-dark">12+</div>
+                  <div class="fs-xs text-muted text-uppercase tracking-wider">Curated Icons</div>
+                </div>
+                <div>
+                  <div class="fs-3 font-serif fw-bold text-dark">6</div>
+                  <div class="fs-xs text-muted text-uppercase tracking-wider">Thematic Collections</div>
+                </div>
+                <div>
+                  <div class="fs-3 font-serif fw-bold text-dark">100%</div>
+                  <div class="fs-xs text-muted text-uppercase tracking-wider">Personalized Control</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="position-relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" 
+                  alt="Scenic Alpine Lake Reflection" 
+                  class="img-fluid rounded-3 shadow-card object-fit-cover" 
+                  style="max-height: 440px; width: 100%;" 
+                />
+                <div class="position-absolute bottom-0 start-0 m-4 p-3 bg-white rounded-2 shadow-sm border max-w-xs d-none d-sm-block">
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <i class="bi bi-gem text-accent"></i>
+                    <strong class="font-serif fs-6 text-dark">Bespoke Concierge</strong>
+                  </div>
+                  <p class="fs-xs text-muted mb-0">Every activity, transfer, and dining recommendation is crafted for effortless elegance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Escapes Preview -->
+      <div class="py-6 border-bottom">
+        <div class="container-xl">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+            <div>
+              <span class="polaris-country-subheading text-accent">Curated Highlights</span>
+              <h2 class="font-serif fs-2 text-dark mt-1">Featured Destinations</h2>
+            </div>
+            <button class="btn btn-polaris-outline mt-3 mt-md-0" onclick="PolarisApp.navigateTo('destinations')">
+              View All Destinations <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+          </div>
+
+          <div class="row g-4">
+            <!-- Feature 1: Kyoto -->
+            <div class="col-12 col-md-4">
+              <div class="polaris-card h-100 d-flex flex-column">
+                <div class="polaris-card-image-wrap position-relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" 
+                    alt="Kyoto, Japan" 
+                    class="polaris-card-img" 
+                    onerror="this.onerror=null; this.src='assets/images/kyoto.svg';"
+                  />
+                  <span class="badge-tag-continent position-absolute top-0 start-0 m-3">Asia</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <span class="polaris-country-subheading mb-1">Japan</span>
+                  <h3 class="font-serif fs-4 mb-2">Kyoto</h3>
+                  <p class="text-muted fs-sm mb-4 flex-grow-1">Ancient temples, serene zen gardens, and historic tea ceremonies.</p>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <span class="text-accent fw-bold fs-sm">From $185/day</span>
+                    <button class="btn btn-polaris-outline btn-sm" onclick="PolarisDestinations.openDetailsModal('kyoto')">
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 2: Swiss Alps -->
+            <div class="col-12 col-md-4">
+              <div class="polaris-card h-100 d-flex flex-column">
+                <div class="polaris-card-image-wrap position-relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80" 
+                    alt="Swiss Alps, Switzerland" 
+                    class="polaris-card-img" 
+                    onerror="this.onerror=null; this.src='assets/images/swiss-alps.svg';"
+                  />
+                  <span class="badge-tag-continent position-absolute top-0 start-0 m-3">Europe</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <span class="polaris-country-subheading mb-1">Switzerland</span>
+                  <h3 class="font-serif fs-4 mb-2">Swiss Alps</h3>
+                  <p class="text-muted fs-sm mb-4 flex-grow-1">Dramatic limestone summits, alpine railways, and luxury chalets.</p>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <span class="text-accent fw-bold fs-sm">From $340/day</span>
+                    <button class="btn btn-polaris-outline btn-sm" onclick="PolarisDestinations.openDetailsModal('swiss-alps')">
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 3: Santorini -->
+            <div class="col-12 col-md-4">
+              <div class="polaris-card h-100 d-flex flex-column">
+                <div class="polaris-card-image-wrap position-relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" 
+                    alt="Santorini, Greece" 
+                    class="polaris-card-img" 
+                    onerror="this.onerror=null; this.src='assets/images/santorini.svg';"
+                  />
+                  <span class="badge-tag-continent position-absolute top-0 start-0 m-3">Europe</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <span class="polaris-country-subheading mb-1">Greece</span>
+                  <h3 class="font-serif fs-4 mb-2">Santorini</h3>
+                  <p class="text-muted fs-sm mb-4 flex-grow-1">Cobalt blue domes, volcanic caldera views, and Aegean sunsets.</p>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <span class="text-accent fw-bold fs-sm">From $270/day</span>
+                    <button class="btn btn-polaris-outline btn-sm" onclick="PolarisDestinations.openDetailsModal('santorini')">
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How Planning Works -->
+      <div class="py-6 bg-surface border-bottom">
+        <div class="container-xl">
+          <div class="text-center max-w-xl mx-auto mb-5">
+            <span class="polaris-country-subheading text-accent">Seamless Itinerary Crafting</span>
+            <h2 class="font-serif fs-2 text-dark mt-1">The Polaris Planning Experience</h2>
+            <p class="text-muted fs-sm">Four simple steps to transform inspiration into a flawlessly organized voyage.</p>
+          </div>
+
+          <div class="row g-4 text-center">
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="p-4 rounded-3 bg-light border h-100">
+                <div class="rounded-circle bg-secondary d-inline-flex p-3 mb-3 text-accent fs-4">
+                  <i class="bi bi-compass"></i>
+                </div>
+                <h4 class="font-serif fs-5 mb-2 text-dark">1. Discover</h4>
+                <p class="text-muted fs-xs mb-0">Browse our 12 global icons or filter by continent, style, and daily budget.</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="p-4 rounded-3 bg-light border h-100">
+                <div class="rounded-circle bg-secondary d-inline-flex p-3 mb-3 text-accent fs-4">
+                  <i class="bi bi-calendar-check"></i>
+                </div>
+                <h4 class="font-serif fs-5 mb-2 text-dark">2. Plan</h4>
+                <p class="text-muted fs-xs mb-0">Set travel dates, passenger counts, and overall budget targets in seconds.</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="p-4 rounded-3 bg-light border h-100">
+                <div class="rounded-circle bg-secondary d-inline-flex p-3 mb-3 text-accent fs-4">
+                  <i class="bi bi-list-stars"></i>
+                </div>
+                <h4 class="font-serif fs-5 mb-2 text-dark">3. Build Schedule</h4>
+                <p class="text-muted fs-xs mb-0">Customize day-by-day activities, timings, and estimated activity costs.</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="p-4 rounded-3 bg-light border h-100">
+                <div class="rounded-circle bg-secondary d-inline-flex p-3 mb-3 text-accent fs-4">
+                  <i class="bi bi-wallet2"></i>
+                </div>
+                <h4 class="font-serif fs-5 mb-2 text-dark">4. Track Budget</h4>
+                <p class="text-muted fs-xs mb-0">Monitor total estimated costs versus budget with dynamic visual health meters.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: EXPLORE (INTERACTIVE SVG WORLD MAP)
+         ====================================================================== -->
+    <section id="explore" class="polaris-section d-none py-5" aria-labelledby="exploreMainHeading">
+      <div class="container-xl">
+        <div class="row align-items-end mb-4">
+          <div class="col-12 col-md-8">
+            <span class="polaris-country-subheading text-accent">Geographic Discovery</span>
+            <h1 id="exploreMainHeading" class="font-serif fs-2 text-dark mt-1">Interactive World Map</h1>
+            <p class="text-muted fs-sm mb-0">
+              Hover over pinpoint markers to preview destinations across continents, or click a marker to view details and start planning.
+            </p>
+          </div>
+          <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+            <button type="button" class="btn btn-polaris-outline btn-sm" id="resetMapSelectionBtn">
+              <i class="bi bi-arrow-counterclockwise me-1"></i>Reset Map View
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Chips above Map -->
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <button type="button" class="map-filter-chip active" data-filter-type="all" data-filter-value="all">All Locations</button>
+          <button type="button" class="map-filter-chip" data-filter-type="continent" data-filter-value="Europe">Europe</button>
+          <button type="button" class="map-filter-chip" data-filter-type="continent" data-filter-value="Asia">Asia</button>
+          <button type="button" class="map-filter-chip" data-filter-type="continent" data-filter-value="North America">North America</button>
+          <button type="button" class="map-filter-chip" data-filter-type="continent" data-filter-value="Africa">Africa</button>
+          <button type="button" class="map-filter-chip" data-filter-type="continent" data-filter-value="Oceania">Oceania</button>
+          <button type="button" class="map-filter-chip" data-filter-type="style" data-filter-value="Luxury">Luxury</button>
+          <button type="button" class="map-filter-chip" data-filter-type="style" data-filter-value="Adventure">Adventure</button>
+        </div>
+
+        <!-- Interactive Map Wrapper -->
+        <div class="map-wrapper p-3 p-md-4 mb-4">
+          <div id="worldMapSvgContainer" class="position-relative">
+            <!-- Dynamic SVG injected by js/destinations.js -->
+          </div>
+          <div class="text-white-50 fs-xxs text-end mt-2">
+            <i class="bi bi-info-circle me-1"></i>Illustrative coordinates for inspiration &bull; Approximate positions
+          </div>
+        </div>
+
+        <!-- Active Map Selection Drawer / Card -->
+        <div id="mapSelectedPanel" class="d-none">
+          <!-- Dynamic destination drawer injected on marker click -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: DESTINATIONS CATALOGUE
+         ====================================================================== -->
+    <section id="destinations" class="polaris-section d-none py-5" aria-labelledby="catalogueMainHeading">
+      <div class="container-xl">
+        <div class="text-center max-w-xl mx-auto mb-5">
+          <span class="polaris-country-subheading text-accent">Worldwide Catalogue</span>
+          <h1 id="catalogueMainHeading" class="font-serif fs-2 text-dark mt-1">Curated Destinations</h1>
+          <p class="text-muted fs-sm">Filter our editorial portfolio by continent, travel style, and daily budget.</p>
+        </div>
+
+        <!-- Multi-attribute Filter Toolbar -->
+        <div class="p-3 p-md-4 rounded-3 bg-surface border mb-5 shadow-sm">
+          <div class="row g-3 align-items-center">
+            <!-- Search Text -->
+            <div class="col-12 col-md-4">
+              <label for="destinationSearchInput" class="form-label fs-xs fw-semibold text-muted mb-1">Search Catalogue</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light border-end-0 text-muted">
+                  <i class="bi bi-search"></i>
+                </span>
+                <input 
+                  type="text" 
+                  id="destinationSearchInput" 
+                  class="form-control border-start-0 ps-0 fs-sm" 
+                  placeholder="Destination, country, or tag..." 
+                />
+              </div>
+            </div>
+
+            <!-- Continent Filter -->
+            <div class="col-6 col-md-2">
+              <label for="continentFilterSelect" class="form-label fs-xs fw-semibold text-muted mb-1">Continent</label>
+              <select id="continentFilterSelect" class="form-select fs-sm">
+                <option value="all" selected>All Continents</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="North America">North America</option>
+                <option value="Africa">Africa</option>
+                <option value="Oceania">Oceania</option>
+              </select>
+            </div>
+
+            <!-- Travel Style Filter -->
+            <div class="col-6 col-md-2">
+              <label for="styleFilterSelect" class="form-label fs-xs fw-semibold text-muted mb-1">Travel Style</label>
+              <select id="styleFilterSelect" class="form-select fs-sm">
+                <option value="all" selected>All Styles</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Luxury">Luxury</option>
+                <option value="Culture">Culture</option>
+                <option value="Nature">Nature</option>
+                <option value="Relaxation">Relaxation</option>
+                <option value="Food and Cuisine">Food &amp; Cuisine</option>
+              </select>
+            </div>
+
+            <!-- Budget Filter -->
+            <div class="col-6 col-md-2">
+              <label for="budgetFilterSelect" class="form-label fs-xs fw-semibold text-muted mb-1">Daily Budget</label>
+              <select id="budgetFilterSelect" class="form-select fs-sm">
+                <option value="all" selected>All Budgets</option>
+                <option value="under-100">&lt; $100 / day</option>
+                <option value="100-200">$100 – $200</option>
+                <option value="200-300">$200 – $300</option>
+                <option value="over-300">&gt; $300 / day</option>
+              </select>
+            </div>
+
+            <!-- Sort By -->
+            <div class="col-6 col-md-2">
+              <label for="sortFilterSelect" class="form-label fs-xs fw-semibold text-muted mb-1">Sort By</label>
+              <select id="sortFilterSelect" class="form-select fs-sm">
+                <option value="name-asc" selected>Name (A – Z)</option>
+                <option value="name-desc">Name (Z – A)</option>
+                <option value="budget-asc">Budget: Low to High</option>
+                <option value="budget-desc">Budget: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Active Results Count & Reset Control -->
+          <div class="d-flex justify-content-between align-items-center pt-3 mt-3 border-top fs-xs">
+            <span id="destinationResultsCount" class="badge bg-secondary text-dark fw-semibold px-2 py-1">
+              12 Destinations
+            </span>
+            <button type="button" class="btn btn-link text-decoration-none text-muted p-0 fs-xs" id="resetFiltersBtn">
+              <i class="bi bi-x-circle me-1"></i>Reset All Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Destination Cards Responsive Grid -->
+        <div class="row" id="destinationsGrid">
+          <!-- Injected dynamically by js/destinations.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: CURATED EDITORIAL COLLECTIONS
+         ====================================================================== -->
+    <section id="collections" class="polaris-section d-none py-5" aria-labelledby="collectionsMainHeading">
+      <div class="container-xl">
+        <div class="text-center max-w-xl mx-auto mb-5">
+          <span class="polaris-country-subheading text-accent">Themed Itineraries</span>
+          <h1 id="collectionsMainHeading" class="font-serif fs-2 text-dark mt-1">Curated Travel Collections</h1>
+          <p class="text-muted fs-sm">
+            Handcrafted anthologies exploring mountain sanctuaries, coastal idylls, and rich cultural heritage routes.
+          </p>
+        </div>
+
+        <div class="row" id="collectionsContainer">
+          <!-- Injected dynamically by js/destinations.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: TRAVEL PLANNER
+         ====================================================================== -->
+    <section id="planner" class="polaris-section d-none py-5" aria-labelledby="plannerMainHeading">
+      <div class="container-xl">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="p-4 p-md-5 rounded-3 bg-surface border shadow-sm">
+              <span class="polaris-country-subheading text-accent">Bespoke Trip Creation</span>
+              <h1 id="plannerMainHeading" class="font-serif fs-2 text-dark mb-2 mt-1">Plan Your Journey</h1>
+              <p class="text-muted fs-sm mb-4">
+                Configure your destination, dates, travel party, and budget. Our engine generates a customizable day-by-day schedule with suggested excursions.
+              </p>
+
+              <form id="tripPlannerForm" novalidate>
+                <div class="row g-3">
+                  <!-- Trip Name -->
+                  <div class="col-12">
+                    <label for="plannerTripNameInput" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Journey Title <span class="text-danger">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="plannerTripNameInput" 
+                      class="form-control" 
+                      placeholder="e.g. Autumn in Kyoto, Alpine Serenity, Amalfi Summer..." 
+                      required 
+                    />
+                  </div>
+
+                  <!-- Primary Destination -->
+                  <div class="col-12">
+                    <label for="plannerDestinationSelect" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Primary Destination <span class="text-danger">*</span>
+                    </label>
+                    <select id="plannerDestinationSelect" class="form-select" required>
+                      <!-- Injected dynamically from POLARIS_DESTINATIONS -->
+                    </select>
+                  </div>
+
+                  <!-- Dates -->
+                  <div class="col-12 col-sm-6">
+                    <label for="plannerStartDate" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Start Date <span class="text-danger">*</span>
+                    </label>
+                    <input type="date" id="plannerStartDate" class="form-control" required />
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <label for="plannerEndDate" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      End Date <span class="text-danger">*</span>
+                    </label>
+                    <input type="date" id="plannerEndDate" class="form-control" required />
+                  </div>
+
+                  <!-- Dynamic Hint / Duration & Budget Calculator -->
+                  <div class="col-12">
+                    <div id="plannerBudgetEstimateHint" class="p-3 rounded-2 bg-light border fs-xs text-muted d-none">
+                      <!-- Injected dynamically on date & destination change -->
+                    </div>
+                  </div>
+
+                  <!-- Number of Travellers -->
+                  <div class="col-12 col-sm-4">
+                    <label for="plannerTravellersInput" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Number of Travellers <span class="text-danger">*</span>
+                    </label>
+                    <input 
+                      type="number" 
+                      id="plannerTravellersInput" 
+                      class="form-control" 
+                      min="1" 
+                      max="20" 
+                      value="2" 
+                      required 
+                    />
+                  </div>
+
+                  <!-- Budget -->
+                  <div class="col-12 col-sm-4">
+                    <label for="plannerBudgetInput" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Total Planned Budget ($ USD) <span class="text-danger">*</span>
+                    </label>
+                    <input 
+                      type="number" 
+                      id="plannerBudgetInput" 
+                      class="form-control" 
+                      min="0" 
+                      step="50" 
+                      placeholder="e.g. 3500" 
+                      required 
+                    />
+                  </div>
+
+                  <!-- Travel Style -->
+                  <div class="col-12 col-sm-4">
+                    <label for="plannerStyleSelect" class="form-label fs-xs fw-semibold text-muted mb-1">
+                      Travel Style
+                    </label>
+                    <select id="plannerStyleSelect" class="form-select">
+                      <option value="Luxury" selected>Luxury</option>
+                      <option value="Culture">Culture</option>
+                      <option value="Adventure">Adventure</option>
+                      <option value="Nature">Nature</option>
+                      <option value="Relaxation">Relaxation</option>
+                      <option value="Food and Cuisine">Food &amp; Cuisine</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end gap-2 mt-4 pt-3 border-top">
+                  <button type="button" class="btn btn-polaris-outline" id="plannerResetBtn">
+                    Clear Form
+                  </button>
+                  <button type="submit" class="btn btn-polaris-primary px-4">
+                    <i class="bi bi-calendar-check me-2"></i>Create Journey
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6: MY JOURNEYS
+         ====================================================================== -->
+    <section id="journeys" class="polaris-section d-none py-5" aria-labelledby="journeysMainHeading">
+      <div class="container-xl">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+          <div>
+            <span class="polaris-country-subheading text-accent">Saved Itineraries</span>
+            <h1 id="journeysMainHeading" class="font-serif fs-2 text-dark mt-1">My Journeys</h1>
+            <p class="text-muted fs-sm mb-0">
+              Review your upcoming travels, customize day-by-day activities, and monitor your expenditure.
+            </p>
+          </div>
+          <div class="d-flex align-items-center gap-2 mt-3 mt-md-0">
+            <span class="badge bg-secondary text-dark px-3 py-2 fs-xs" id="journeysPageCount">0 Journeys</span>
+            <button class="btn btn-polaris-primary btn-sm" onclick="PolarisApp.navigateTo('planner')">
+              <i class="bi bi-plus-lg me-1"></i>New Journey
+            </button>
+          </div>
+        </div>
+
+        <div class="row" id="journeysListContainer">
+          <!-- Injected dynamically by js/planner.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 7: FAVOURITES
+         ====================================================================== -->
+    <section id="favourites" class="polaris-section d-none py-5" aria-labelledby="favouritesMainHeading">
+      <div class="container-xl">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+          <div>
+            <span class="polaris-country-subheading text-accent">Personal Wishlist</span>
+            <h1 id="favouritesMainHeading" class="font-serif fs-2 text-dark mt-1">Saved Favourites</h1>
+            <p class="text-muted fs-sm mb-0">Destinations you have curated for future wanderlust.</p>
+          </div>
+          <div class="d-flex align-items-center gap-2 mt-3 mt-md-0">
+            <input 
+              type="text" 
+              id="favouritesSearchInput" 
+              class="form-control form-control-sm" 
+              placeholder="Search saved destinations..." 
+              oninput="PolarisDestinations.renderFavouritesView()"
+            />
+            <span class="badge bg-secondary text-dark px-3 py-2 fs-xs text-nowrap" id="favouritesPageCount">0 Saved</span>
+          </div>
+        </div>
+
+        <div class="row" id="favouritesGrid">
+          <!-- Injected dynamically by js/destinations.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 8: TRAVEL INSIGHTS
+         ====================================================================== -->
+    <section id="insights" class="polaris-section d-none py-5" aria-labelledby="insightsMainHeading">
+      <div class="container-xl">
+        <div class="text-center max-w-xl mx-auto mb-5">
+          <span class="polaris-country-subheading text-accent">Personal Analytics</span>
+          <h1 id="insightsMainHeading" class="font-serif fs-2 text-dark mt-1">Travel Insights</h1>
+          <p class="text-muted fs-sm">Live calculated analytics derived from your saved favourites and planned itineraries.</p>
+        </div>
+
+        <!-- 4 Top KPI Stat Cards -->
+        <div class="row g-4 mb-5">
+          <div class="col-6 col-lg-3">
+            <div class="p-4 rounded-3 bg-surface border shadow-sm h-100">
+              <span class="text-muted fs-xs text-uppercase tracking-wider">Saved Destinations</span>
+              <div class="fs-2 font-serif fw-bold text-dark my-1" id="insightFavCount">0</div>
+              <div class="fs-xxs text-muted"><i class="bi bi-heart text-accent me-1"></i>Curated in your wishlist</div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="p-4 rounded-3 bg-surface border shadow-sm h-100">
+              <span class="text-muted fs-xs text-uppercase tracking-wider">Planned Journeys</span>
+              <div class="fs-2 font-serif fw-bold text-dark my-1" id="insightJourneysCount">0</div>
+              <div class="fs-xxs text-muted"><i class="bi bi-briefcase text-accent me-1"></i>Bespoke itineraries built</div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="p-4 rounded-3 bg-surface border shadow-sm h-100">
+              <span class="text-muted fs-xs text-uppercase tracking-wider">Upcoming Departures</span>
+              <div class="fs-2 font-serif fw-bold text-accent my-1" id="insightUpcomingCount">0</div>
+              <div class="fs-xxs text-muted"><i class="bi bi-calendar-event text-accent me-1"></i>Scheduled future trips</div>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="p-4 rounded-3 bg-surface border shadow-sm h-100">
+              <span class="text-muted fs-xs text-uppercase tracking-wider">Total Planned Budget</span>
+              <div class="fs-2 font-serif fw-bold text-dark my-1" id="insightTotalBudget">$0</div>
+              <div class="fs-xxs text-muted">Est. Spend: <span id="insightEstimatedSpend" class="fw-semibold text-dark">$0</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Analytics Breakdown -->
+        <div class="row g-4">
+          <!-- Continent Distribution -->
+          <div class="col-12 col-lg-6">
+            <div class="p-4 rounded-3 bg-surface border shadow-sm h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="font-serif fs-5 mb-0 text-dark">Geographic Affinity</h3>
+                <span class="badge bg-secondary text-dark fs-xs">By Continent</span>
+              </div>
+              <p class="text-muted fs-xs mb-4">
+                Calculated dynamically from destinations in your wishlist and upcoming scheduled itineraries.
+              </p>
+              <div id="insightContinentBars">
+                <!-- Injected dynamically by js/insights.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Style Affinity & Persona -->
+          <div class="col-12 col-lg-6">
+            <div class="p-4 rounded-3 bg-surface border shadow-sm h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="font-serif fs-5 mb-0 text-dark">Travel Persona</h3>
+                <span class="badge bg-accent text-dark fs-xs fw-bold">Live Scoring</span>
+              </div>
+              
+              <div class="p-3 rounded-2 bg-secondary-subtle border mb-4">
+                <div class="fs-xs text-muted mb-1">Primary Style Affinity</div>
+                <div class="fs-4 font-serif fw-bold text-dark" id="insightTopStyle">Bespoke Discovery</div>
+              </div>
+
+              <div class="fs-xs fw-semibold text-muted text-uppercase tracking-wider mb-2">Style Preferences Tally</div>
+              <div id="insightStyleTagsContainer" class="d-flex flex-wrap">
+                <!-- Injected dynamically by js/insights.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       EDITORIAL FOOTER
+       ======================================================================== -->
+  <footer class="polaris-footer mt-6">
+    <div class="container-xl">
+      <div class="row g-5">
+        <div class="col-12 col-md-4">
+          <a class="polaris-brand text-white fs-4 mb-2 d-inline-block text-decoration-none" href="#home" data-nav-target="home">
+            POLARIS
+          </a>
+          <span class="polaris-brand-sub text-white-50 mb-3 d-block">Find your next somewhere.</span>
+          <p class="text-white-50 fs-sm">
+            POLARIS is a premium editorial travel discovery and bespoke itinerary planning platform. Inspiring journeys worth remembering.
+          </p>
+          <div class="d-flex gap-3 text-white-50 fs-5 mt-3">
+            <i class="bi bi-instagram cursor-pointer" title="Instagram"></i>
+            <i class="bi bi-pinterest cursor-pointer" title="Pinterest"></i>
+            <i class="bi bi-twitter-x cursor-pointer" title="X"></i>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h5 class="fs-6 text-white text-uppercase tracking-wider mb-3">Navigation</h5>
+          <ul class="list-unstyled fs-sm d-flex flex-column gap-2 mb-0">
+            <li><a href="#home" data-nav-target="home">Home</a></li>
+            <li><a href="#explore" data-nav-target="explore">Explore Map</a></li>
+            <li><a href="#destinations" data-nav-target="destinations">Destinations</a></li>
+            <li><a href="#collections" data-nav-target="collections">Collections</a></li>
+            <li><a href="#planner" data-nav-target="planner">Plan a Trip</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <h5 class="fs-6 text-white text-uppercase tracking-wider mb-3">Management</h5>
+          <ul class="list-unstyled fs-sm d-flex flex-column gap-2 mb-0">
+            <li><a href="#journeys" data-nav-target="journeys">My Journeys</a></li>
+            <li><a href="#favourites" data-nav-target="favourites">Saved Favourites</a></li>
+            <li><a href="#insights" data-nav-target="insights">Travel Insights</a></li>
+            <li>
+              <button 
+                type="button" 
+                class="btn btn-link p-0 text-white-50 fs-sm text-start text-decoration-none" 
+                data-bs-toggle="modal" 
+                data-bs-target="#resetDataConfirmModal"
+              >
+                Reset Demo Data
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h5 class="fs-6 text-white text-uppercase tracking-wider mb-3">Editorial Notice</h5>
+          <p class="text-white-50 fs-xs mb-3">
+            All estimated budgets, durations, and seasonal recommendations are illustrative approximations curated for itinerary planning purposes.
+          </p>
+          <div class="p-3 rounded-2 bg-dark-surface border border-secondary text-white-50 fs-xs">
+            <i class="bi bi-shield-check text-accent me-1"></i>Local Storage Active &bull; No API Keys Required
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center pt-4 mt-5 border-top border-secondary text-white-50 fs-xs">
+        <div>&copy; 2026 POLARIS Travel Platform. All rights reserved.</div>
+        <div class="mt-2 mt-sm-0">Find your next somewhere.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODALS & OVERLAYS
+       ======================================================================== -->
+
+  <!-- 1. DESTINATION DETAILS MODAL -->
+  <div class="modal fade" id="destinationDetailsModal" tabindex="-1" aria-labelledby="modalDestTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span id="modalDestCountry" class="polaris-country-subheading text-accent d-block">Country</span>
+            <h2 class="modal-title font-serif fs-3 text-dark" id="modalDestTitle">Destination Details</h2>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close modal"></button>
+        </div>
+
+        <div class="modal-body p-0">
+          <!-- Hero Photo -->
+          <div class="position-relative">
+            <img 
+              id="modalDestImage" 
+              src="" 
+              alt="Destination Panorama" 
+              class="w-100 object-fit-cover" 
+              style="max-height: 320px;" 
+            />
+          </div>
+
+          <div class="p-4">
+            <!-- Key Badges Strip -->
+            <div class="d-flex flex-wrap gap-2 mb-4 p-3 rounded-2 bg-secondary-subtle border">
+              <div class="me-3">
+                <span class="fs-xxs text-muted text-uppercase d-block">Best Season</span>
+                <strong class="fs-xs text-dark" id="modalDestSeason">-</strong>
+              </div>
+              <div class="me-3 border-start ps-3">
+                <span class="fs-xxs text-muted text-uppercase d-block">Suggested Duration</span>
+                <strong class="fs-xs text-dark" id="modalDestDuration">-</strong>
+              </div>
+              <div class="border-start ps-3">
+                <span class="fs-xxs text-muted text-uppercase d-block">Estimated Daily Living</span>
+                <strong class="fs-xs text-accent" id="modalDestBudget">-</strong>
+              </div>
+            </div>
+
+            <!-- Overview -->
+            <h4 class="font-serif fs-5 mb-2 text-dark">Editorial Overview</h4>
+            <p id="modalDestOverview" class="text-muted fs-sm mb-4"></p>
+
+            <!-- Key Highlights -->
+            <h4 class="font-serif fs-5 mb-2 text-dark">Main Attractions &amp; Highlights</h4>
+            <ul id="modalDestHighlights" class="list-unstyled fs-sm text-dark mb-4"></ul>
+
+            <!-- Suggested Excursions -->
+            <h4 class="font-serif fs-5 mb-2 text-dark">Suggested Activities</h4>
+            <div class="row" id="modalDestActivities"></div>
+
+            <!-- Luxury Travel Tips -->
+            <h4 class="font-serif fs-5 mb-2 text-dark mt-2">Concierge Travel Tips</h4>
+            <div id="modalDestTips" class="mb-2"></div>
+          </div>
+        </div>
+
+        <div class="modal-footer d-flex justify-content-between">
+          <button type="button" class="btn btn-outline-danger" id="modalFavToggleBtn">
+            <i class="bi bi-heart me-1"></i>Save to Favourites
+          </button>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-polaris-outline" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-polaris-accent" id="modalPlanJourneyBtn">
+              <i class="bi bi-calendar-plus me-1"></i>Plan a Journey Here
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. DAY-BY-DAY ITINERARY BUILDER MODAL -->
+  <div class="modal fade" id="itineraryManagerModal" tabindex="-1" aria-labelledby="itineraryModalTripName" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="polaris-country-subheading text-accent d-block">Day-by-Day Itinerary Builder</span>
+            <h2 class="modal-title font-serif fs-3 text-dark" id="itineraryModalTripName">Journey Schedule</h2>
+            <p class="text-muted fs-xs mb-0" id="itineraryModalSubtitle"></p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close modal"></button>
+        </div>
+
+        <div class="modal-body p-4">
+          <!-- Dynamic Budget Health Bar -->
+          <div id="itineraryBudgetBarContainer"></div>
+
+          <!-- Day-by-Day Schedule Containers -->
+          <div id="itineraryDaysContainer"></div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-polaris-primary" data-bs-dismiss="modal">
+            Done Organizing
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. ADD / EDIT ACTIVITY MODAL -->
+  <div class="modal fade" id="activityEditorModal" tabindex="-1" aria-labelledby="activityModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title font-serif fs-5 text-dark" id="activityModalTitle">Add Activity</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="activityEditorForm" onsubmit="return false;">
+            <div class="mb-3">
+              <label for="activityNameInput" class="form-label fs-xs fw-semibold text-muted mb-1">
+                Activity Name <span class="text-danger">*</span>
+              </label>
+              <input type="text" id="activityNameInput" class="form-control" placeholder="e.g. Sunrise Hot Air Balloon Flight" required />
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label for="activityDaySelect" class="form-label fs-xs fw-semibold text-muted mb-1">Day</label>
+                <select id="activityDaySelect" class="form-select"></select>
+              </div>
+              <div class="col-6">
+                <label for="activityTimeInput" class="form-label fs-xs fw-semibold text-muted mb-1">Time / Sequence</label>
+                <input type="text" id="activityTimeInput" class="form-control" placeholder="e.g. 09:00 AM or Morning" />
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label for="activityCategorySelect" class="form-label fs-xs fw-semibold text-muted mb-1">Category</label>
+                <select id="activityCategorySelect" class="form-select">
+                  <option value="Sightseeing" selected>Sightseeing</option>
+                  <option value="Dining">Dining</option>
+                  <option value="Adventure">Adventure</option>
+                  <option value="Culture">Culture</option>
+                  <option value="Leisure">Leisure</option>
+                  <option value="Transit">Transit</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="activityCostInput" class="form-label fs-xs fw-semibold text-muted mb-1">Estimated Cost ($ USD)</label>
+                <input type="number" id="activityCostInput" class="form-control" min="0" step="5" value="50" />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="activityDescriptionInput" class="form-label fs-xs fw-semibold text-muted mb-1">Description / Notes</label>
+              <textarea id="activityDescriptionInput" class="form-control fs-sm" rows="3" placeholder="Excursion details, booking hints, meeting points..."></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-polaris-outline" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-polaris-accent" id="saveActivityModalBtn">Save Activity</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. EDIT JOURNEY METADATA MODAL -->
+  <div class="modal fade" id="editJourneyModal" tabindex="-1" aria-labelledby="editJourneyModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title font-serif fs-5 text-dark" id="editJourneyModalTitle">Edit Journey Information</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="editJourneyForm" onsubmit="return false;">
+            <input type="hidden" id="editTripId" />
+            <div class="mb-3">
+              <label for="editTripName" class="form-label fs-xs fw-semibold text-muted mb-1">Journey Name</label>
+              <input type="text" id="editTripName" class="form-control" required />
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label for="editTripStartDate" class="form-label fs-xs fw-semibold text-muted mb-1">Start Date</label>
+                <input type="date" id="editTripStartDate" class="form-control" required />
+              </div>
+              <div class="col-6">
+                <label for="editTripEndDate" class="form-label fs-xs fw-semibold text-muted mb-1">End Date</label>
+                <input type="date" id="editTripEndDate" class="form-control" required />
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label for="editTripTravellers" class="form-label fs-xs fw-semibold text-muted mb-1">Travellers</label>
+                <input type="number" id="editTripTravellers" class="form-control" min="1" required />
+              </div>
+              <div class="col-6">
+                <label for="editTripBudget" class="form-label fs-xs fw-semibold text-muted mb-1">Budget ($ USD)</label>
+                <input type="number" id="editTripBudget" class="form-control" min="0" required />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="editTripStatus" class="form-label fs-xs fw-semibold text-muted mb-1">Journey Status</label>
+              <select id="editTripStatus" class="form-select">
+                <option value="Planning">Planning</option>
+                <option value="Upcoming">Upcoming</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-polaris-outline" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-polaris-primary" onclick="PolarisPlanner.saveEditedTrip()">Update Journey</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. GLOBAL SEARCH MODAL (Ctrl+K) -->
+  <div class="modal fade" id="globalSearchModal" tabindex="-1" aria-labelledby="globalSearchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0 pb-0">
+          <div class="input-group input-group-lg border-bottom pb-2">
+            <span class="input-group-text bg-transparent border-0 text-muted ps-0">
+              <i class="bi bi-search fs-4"></i>
+            </span>
+            <input 
+              type="text" 
+              id="globalSearchInput" 
+              class="form-control border-0 shadow-none font-serif fs-4" 
+              placeholder="Search destinations, countries, or styles..." 
+              aria-label="Search destinations"
+            />
+            <button class="btn btn-link text-muted pe-0 text-decoration-none" type="button" id="globalSearchClearBtn" style="display: none;">
+              <i class="bi bi-x-circle fs-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-body p-0" style="max-height: 400px; overflow-y: auto;">
+          <div id="globalSearchResultsContainer">
+            <div class="p-4 text-center text-muted fs-sm">
+              Type a destination name, country, continent, or travel style to search.
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer d-flex justify-content-between py-2 bg-light border-top fs-xxs text-muted">
+          <span><kbd class="bg-white border text-dark px-1">Esc</kbd> to close &bull; <kbd class="bg-white border text-dark px-1">Ctrl+K</kbd> to search</span>
+          <span>POLARIS Destination Archive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. RESET DEMO DATA CONFIRMATION MODAL -->
+  <div class="modal fade" id="resetDataConfirmModal" tabindex="-1" aria-labelledby="resetModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h4 class="modal-title font-serif fs-5 text-dark" id="resetModalTitle">Reset Demo Data?</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-0 fs-sm text-muted">
+          This will restore the default sample journeys, pre-curated favourites, and reset local custom modifications.
+        </div>
+        <div class="modal-footer border-top-0 d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-polaris-outline btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger btn-sm" id="confirmResetDemoDataBtn">Reset All Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST CONTAINER -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="polarisToastContainer" style="z-index: 1090;"></div>
+
+  <!-- ========================================================================
+       SCRIPTS (OFFICIAL BOOTSTRAP 5 & POLARIS MODULES)
+       ======================================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/destinations.js"></script>
+  <script src="js/planner.js"></script>
+  <script src="js/insights.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
