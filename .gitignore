@@ -6,9 +6,15 @@ node_modules/
 Thumbs.db
 
 # Python & Report generator artifacts
+*.py
 __pycache__/
 *.pyc
 *.pyo
+
+# Generated reports & screenshots
+*.docx
+*.pdf
+report_screenshots/
 
 # Build & deployment artifacts
 .vercel/
