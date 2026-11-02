@@ -15,6 +15,7 @@ __pycache__/
 *.docx
 *.pdf
 report_screenshots/
+report_assets/
 
 # Build & deployment artifacts
 .vercel/
