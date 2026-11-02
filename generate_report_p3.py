@@ -137,3 +137,4 @@ def build_appendix_c(doc, base_dir="."):
     create_styled_table(doc, summary_headers, summary_data, [3.4, 3.4])
 
 print("Appendices module created successfully.")
+
