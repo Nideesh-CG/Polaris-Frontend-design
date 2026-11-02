@@ -1,27 +1,16 @@
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Editor / IDE files
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Node / Dependencies
+# Dependencies and environments
 node_modules/
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# Python & Report generator artifacts
+__pycache__/
+*.pyc
+*.pyo
+
+# Build & deployment artifacts
+.vercel/
 dist/
 build/
